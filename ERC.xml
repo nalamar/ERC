@@ -1,0 +1,163 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+	..\..\..\BlizzardInterfaceCode\Interface\FrameXML\UI.xsd">
+	<Button name="ERCMainFrameTemplate" virtual="true">
+		<!--<Size x="295" y="25"/> -->
+		<Size x="345" y="25"/>
+		<Frames>
+			<!-- Header button template -->
+			<Button name="$parentHeader" parentKey="header" setAllPoints="true">
+				<Layers>
+					<Layer level="BORDER">
+						<Texture name="$parentHeaderLeft" file="Interface\Buttons\CollapsibleHeader">
+							<Size x="76" y="21"/>
+							<Anchors>
+								<Anchor point="LEFT" x="0" y="0"/>
+							</Anchors>
+							<TexCoords left="0.17578125" right="0.47265625" top="0.29687500" bottom="0.54687500"/>
+						</Texture>
+						<Texture name="$parentHeaderRight" file="Interface\Buttons\CollapsibleHeader">
+							<Size x="76" y="21"/>
+							<Anchors>
+								<Anchor point="RIGHT" x="-4" y="0"/>
+							</Anchors>
+							<TexCoords left="0.17578125" right="0.47265625" top="0.01562500" bottom="0.26562500"/>
+						</Texture>
+						<Texture file="Interface\Buttons\CollapsibleHeader">
+							<Size x="0" y="21"/>
+							<Anchors>
+								<Anchor point="LEFT" relativeTo="$parentHeaderLeft" relativePoint="RIGHT" x="-20" y="0"/>
+								<Anchor point="RIGHT" relativeTo="$parentHeaderRight" relativePoint="LEFT" x="20" y="0"/>
+							</Anchors>
+							<TexCoords left="0.48046875" right="0.98046875" top="0.01562500" bottom="0.26562500"/>
+						</Texture>
+					</Layer>
+					<Layer level="ARTWORK">
+						<FontString inherits="GameFontHighlight" justifyH="LEFT" parentKey="text">
+							<Anchors>
+								<Anchor point="LEFT" x="24" y="0"/>
+								<Anchor point="RIGHT"/>
+							</Anchors>
+						</FontString>
+						<Texture name="$parentExpandIcon" file="Interface\Buttons\UI-PlusMinus-Buttons" parentKey="expandIcon">
+							<Size>
+								<AbsDimension x="7" y="7"/>
+							</Size>
+							<Anchors>
+								<Anchor point="LEFT">
+									<Offset x="8" y="0"/>
+								</Anchor>
+							</Anchors>
+						</Texture>
+					</Layer>
+				</Layers>
+				<HighlightTexture name="$parentHighlight" file="Interface\ClassTrainerFrame\TrainerTextures" alphaMode="ADD">
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset x="2" y="-3"/>
+						</Anchor>
+						<Anchor point="BOTTOMRIGHT">
+							<Offset x="-5" y="2"/>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0.00195313" right="0.57421875" top="0.75390625" bottom="0.84570313"/>
+				</HighlightTexture>
+				<Scripts>
+					<OnClick>
+						ERC.HeaderOnClick(self:GetParent())
+					</OnClick>
+				</Scripts>
+				<Frames>
+					<Button name="$parentKey1Button" inherits="UIGoldBorderButtonTemplate" parentKey="key1" id="1" setAllPoints="true">
+						<Size>
+							<AbsDimension x="85" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parent" relativePoint="LEFT">
+								<Offset>
+									<AbsDimension x="170" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								ERC.HeaderOnInviteAll(self)
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentKey2Button" inherits="UIGoldBorderButtonTemplate" parentKey="key2" id="1" setAllPoints="true">
+						<Size>
+							<AbsDimension x="85" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentKey1Button" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								ERC.HeaderOnRemoveAll(self)
+							</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Button>
+			<!-- Detail button template -->
+			<Button name="$parentDetail" parentKey="detail" setAllPoints="true">
+				<Layers>
+					<Layer level="ARTWORK">
+						<FontString name="$parentDescription" inherits="GameFontHighlight" justifyH="LEFT" parentKey="text">
+							<Size>
+								<AbsDimension x="170" y="24"/>
+							</Size>
+							<Anchors>
+								<Anchor point="LEFT">
+									<Offset>
+										<AbsDimension x="10" y="0"/>
+									</Offset>
+								</Anchor>
+							</Anchors>
+						</FontString>
+					</Layer>
+				</Layers>
+				<Frames>
+					<Button name="$parentKey1Button" inherits="UIPanelButtonTemplate" parentKey="key1" id="1" setAllPoints="true">
+						<Size>
+							<AbsDimension x="85" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT">
+								<Offset>
+									<AbsDimension x="170" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								ERC.DetailOnInvite(self)
+							</OnClick>
+						</Scripts>
+					</Button>
+					<Button name="$parentKey2Button" inherits="UIPanelButtonTemplate" parentKey="key2" id="2" setAllPoints="true">
+						<Size>
+							<AbsDimension x="85" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="$parentKey1Button" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="0" y="0"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								ERC.DetailOnRemove(self)
+							</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Button>
+		</Frames>
+	</Button>
+</Ui>

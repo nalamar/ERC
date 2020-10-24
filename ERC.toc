@@ -1,0 +1,16 @@
+## Interface: 80100
+## Title: Easy Raid Calendar
+## Author: Avonmora@Kazzak-EU
+## Version: r48-release
+## Notes: Raid Calendar Invites Automation
+## DefaultState: Enabled
+## LoadOnDemand: 1
+## SavedVariables: ERCDB
+## LoadWith: Blizzard_Calendar
+## X-Curse-Packaged-Version: Release-10
+## X-Curse-Project-Name: Easy Raid Calendar
+## X-Curse-Project-ID: easy-raid-calendar
+## X-Curse-Repository-ID: wow/easy-raid-calendar/mainline
+
+ERC.xml
+ERC.lua
